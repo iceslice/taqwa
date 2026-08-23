@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Student Login" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head text-center" style="margin: 0 auto 32px;">
+            <span class="eyebrow">{% trans "Student Portal" %}</span>
+            <h1>{% trans "Welcome back" %}</h1>
+            <p class="muted">{% trans "Log in to track your application and upload documents." %}</p>
+        </div>
+
+        <form method="post" class="form-card">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="alert alert-error">{% trans "Incorrect username or password." %}</div>
+            {% endif %}
+            <div class="form-field">
+                <label for="{{ form.username.id_for_label }}">{% trans "Username" %}</label>
+                {{ form.username }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.password.id_for_label }}">{% trans "Password" %}</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">{% trans "Log In" %}</button>
+            <p class="text-center muted" style="margin-top:16px;">
+                {% trans "New here?" %} <a href="{% url 'portal:signup' %}">{% trans "Create an account" %}</a>
+            </p>
+        </form>
+    </div>
+</section>
+{% endblock %}

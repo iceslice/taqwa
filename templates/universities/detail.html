@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ university.name }} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container" style="max-width: 760px;">
+        <span class="eyebrow">{{ university.country.flag_emoji }} {{ university.country.name }}</span>
+        <h1>{{ university.name }}</h1>
+
+        <div class="stat-row">
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "City" %}</span>
+                <p class="boarding-value" style="font-size:1.3rem;">{{ university.city }}</p>
+            </div>
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Ranking" %}</span>
+                <p class="boarding-value" style="font-size:1.3rem;">{{ university.ranking|default:"—" }}</p>
+            </div>
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Tuition From" %}</span>
+                <p class="boarding-value" style="font-size:1.3rem;">
+                    {% if university.tuition_from_usd %}${{ university.tuition_from_usd }}{% else %}—{% endif %}
+                </p>
+            </div>
+        </div>
+
+        <div class="stack" style="margin-top:32px;">
+            {{ university.description|linebreaks }}
+        </div>
+
+        <a href="{% url 'leads:capture' %}" class="btn btn-primary" style="margin-top:16px;">
+            {% trans "Get Help Applying Here" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

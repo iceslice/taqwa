@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "My Dashboard" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "Student Portal" %}</span>
+            <h1>{% trans "Welcome" %}, {{ request.user.first_name|default:request.user.username }}</h1>
+            <span class="badge badge-gold">{{ profile.get_application_status_display }}</span>
+        </div>
+
+        <div class="route-line"></div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 32px; align-items:start; margin-top:24px;">
+            <div class="card">
+                <h3>{% trans "Profile" %}</h3>
+                <p><strong>{% trans "Target country:" %}</strong> {{ profile.target_country|default:"—" }}</p>
+                <p><strong>{% trans "Nationality:" %}</strong> {{ profile.nationality|default:"—" }}</p>
+                <p><strong>{% trans "Phone:" %}</strong> {{ profile.phone|default:"—" }}</p>
+                <a href="{% url 'portal:upload' %}" class="btn btn-primary btn-sm">{% trans "Upload a Document" %}</a>
+            </div>
+
+            <div class="card">
+                <h3>{% trans "Document Checklist" %}</h3>
+                <ul class="checklist">
+                    {% for item in checklist %}
+                        <li class="checklist-item">
+                            <div>
+                                <div class="doc-name">{{ item.doc_type.name }}</div>
+                                {% if item.doc_type.description %}<div class="doc-desc">{{ item.doc_type.description }}</div>{% endif %}
+                            </div>
+                            {% if item.uploaded_doc %}
+                                {% if item.uploaded_doc.status == "approved" %}
+                                    <span class="badge badge-success">{% trans "Approved" %}</span>
+                                {% elif item.uploaded_doc.status == "rejected" %}
+                                    <span class="badge badge-danger">{% trans "Needs Re-upload" %}</span>
+                                {% else %}
+                                    <span class="badge">{% trans "Pending Review" %}</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="badge badge-muted">{% trans "Missing" %}</span>
+                            {% endif %}
+                        </li>
+                    {% empty %}
+                        <li class="muted">{% trans "No document checklist has been configured yet." %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

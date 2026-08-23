@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ lead.full_name }} — {% trans "Lead" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <a href="{% url 'leads:crm_dashboard' %}" class="muted">&larr; {% trans "Back to pipeline" %}</a>
+
+        <div class="section-head" style="margin-top:14px;">
+            <span class="eyebrow">{{ lead.get_source_display }}</span>
+            <h1>{{ lead.full_name }}</h1>
+            <span class="badge">{{ lead.get_status_display }}</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items:start;">
+            <div class="stack">
+                <div class="card">
+                    <h3>{% trans "Contact" %}</h3>
+                    <p>{{ lead.phone }}<br>{{ lead.email }}</p>
+                    <p class="muted">{{ lead.country_of_residence|default:"—" }}</p>
+                </div>
+
+                <div class="card">
+                    <h3>{% trans "Interest" %}</h3>
+                    <p><strong>{% trans "Destination:" %}</strong> {{ lead.get_preferred_destination_display|default:"—" }}</p>
+                    <p><strong>{% trans "Service:" %}</strong> {{ lead.interested_service|default:"—" }}</p>
+                    <p class="muted">{{ lead.message|default:"—"|linebreaksbr }}</p>
+                </div>
+
+                <div class="card">
+                    <h3>{% trans "Update Status" %}</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-field">
+                            <label>{% trans "Status" %}</label>
+                            {{ status_form.status }}
+                        </div>
+                        <div class="form-field">
+                            <label>{% trans "Assigned to" %}</label>
+                            {{ status_form.assigned_to }}
+                        </div>
+                        <button type="submit" name="update_status" class="btn btn-primary btn-block btn-sm">{% trans "Save" %}</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="stack">
+                <div class="card">
+                    <h3>{% trans "Add Note" %}</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-field">
+                            {{ note_form.note }}
+                        </div>
+                        <button type="submit" name="add_note" class="btn btn-gold btn-sm">{% trans "Log Note" %}</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>{% trans "Timeline" %}</h3>
+                    <ul class="timeline">
+                        {% for note in notes %}
+                            <li>
+                                <div class="meta">{{ note.author|default:"—" }} · {{ note.created_at|date:"d M Y, H:i" }}</div>
+                                <div>{{ note.note }}</div>
+                            </li>
+                        {% empty %}
+                            <li class="muted">{% trans "No notes logged yet." %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                {% if consultations %}
+                <div class="card">
+                    <h3>{% trans "Consultations" %}</h3>
+                    {% for c in consultations %}
+                        <p>
+                            <span class="badge {% if c.completed %}badge-success{% else %}badge-gold{% endif %}">
+                                {% if c.completed %}{% trans "Completed" %}{% else %}{% trans "Scheduled" %}{% endif %}
+                            </span>
+                            {{ c.scheduled_for|date:"d M Y, H:i" }} — {{ c.get_mode_display }}
+                        </p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

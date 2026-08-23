@@ -1,0 +1,46 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Taqwa Global Education" %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <meta name="description" content="{% block meta_description %}{% trans 'Study abroad guidance — visa, admission and scholarship support.' %}{% endblock %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Noto+Serif+Bengali:wght@500;600&family=Noto+Sans+Bengali:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" href="{% static 'css/rtl.css' %}">
+    {% endif %}
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% include "partials/nav.html" %}
+
+    {% if messages %}
+        <div class="container" style="padding-top:20px;">
+            {% for message in messages %}
+                <div class="alert {% if message.tags == 'error' %}alert-error{% else %}alert-success{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/footer.html" %}
+
+    {% if site.whatsapp_number or WHATSAPP_NUMBER %}
+        <a class="wa-float" href="https://wa.me/{{ site.whatsapp_number|default:WHATSAPP_NUMBER }}" target="_blank" rel="noopener" aria-label="{% trans 'Chat on WhatsApp' %}">💬</a>
+    {% endif %}
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Taqwa Global Education — Study Abroad Made Simple" %}{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <span class="eyebrow">{% trans "Study Abroad Consultancy" %}</span>
+            <h1>{% trans "Study in Malaysia at Top ranking Universities" %}</h1>
+            <p class="hero-lede">{% trans "Visa, admission and scholarship support — from the first consultation to the day you board your flight." %}</p>
+            <div class="hero-cta">
+                <a href="{% url 'leads:capture' %}" class="btn btn-primary">{% trans "Free Consultation" %}</a>
+                <a href="{% url 'universities:directory' %}" class="btn btn-outline">{% trans "Browse Universities" %}</a>
+            </div>
+        </div>
+        <div>
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Boarding Pass" %} · {% trans "Route to Your Future" %}</span>
+                <div class="route-line"></div>
+                <div class="cluster" style="justify-content:space-between;">
+                    <div>
+                        <span class="boarding-label">{% trans "From" %}</span>
+                        <div class="boarding-value" style="font-size:1.2rem;">{% trans "You" %}</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <span class="boarding-label">{% trans "To" %}</span>
+                        <div class="boarding-value" style="font-size:1.2rem;">{% trans "Offer Letter" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="stat-row">
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Students Served" %}</span>
+                <p class="boarding-value">{{ site.students_served|default:"50,000" }}+</p>
+            </div>
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Visa Success Rate" %}</span>
+                <p class="boarding-value">{{ site.visa_success_rate|default:"99.99" }}%</p>
+            </div>
+            <div class="boarding-card">
+                <span class="boarding-label">{% trans "Partner Universities" %}</span>
+                <p class="boarding-value">{% trans "Top Ranked" %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "What We Do" %}</span>
+            <h2>{% trans "Our Services" %}</h2>
+            <p class="muted">{% trans "Everything you need between deciding to study in Malaysia and landing at your destination." %}</p>
+        </div>
+        <div class="card-grid">
+            {% for service in services %}
+                <a class="card" href="{% url 'services:detail' service.slug %}">
+                    <span class="icon-badge">{{ forloop.counter }}</span>
+                    <h3>{{ service.title }}</h3>
+                    <p class="muted">{{ service.summary }}</p>
+                </a>
+            {% empty %}
+                <p class="muted">{% trans "Services will appear here once added in the admin." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "Where You Could Go" %}</span>
+            <h2>{% trans "Featured Universities" %}</h2>
+        </div>
+        <div class="card-grid">
+            {% for uni in universities %}
+                <a class="card uni-card" href="{% url 'universities:detail' uni.slug %}">
+                    <div>
+                        <span class="uni-flag">{{ uni.country.flag_emoji }}</span>
+                        <h3>{{ uni.name }}</h3>
+                        <div class="uni-meta">
+                            <span>{{ uni.city }}, {{ uni.country.name }}</span>
+                            {% if uni.ranking %}<span>{% trans "Rank" %} #{{ uni.ranking }}</span>{% endif %}
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                <p class="muted">{% trans "Universities will appear here once added in the admin." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt text-center">
+    <div class="container">
+        <h2>{% trans "Ready to start your journey?" %}</h2>
+        <p class="muted">{% trans "Book a free consultation with our counselors today." %}</p>
+        <a href="{% url 'leads:capture' %}" class="btn btn-gold">{% trans "Free Consultation" %}</a>
+    </div>
+</section>
+
+{% endblock %}

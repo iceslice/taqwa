@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load i18n widget_tweaks %}
+
+{% block title %}{% trans "Free Consultation" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head text-center" style="margin: 0 auto 32px;">
+            <span class="eyebrow">{% trans "Free Consultation" %}</span>
+            <h1>{% trans "Tell us about your study abroad plans" %}</h1>
+            <p class="muted">{% trans "Our counselors respond within 24 hours." %}</p>
+        </div>
+
+        <form method="post" class="form-card">
+            {% csrf_token %}
+
+            <div class="form-field">
+                <label for="{{ form.full_name.id_for_label }}">{% trans "Full name" %}</label>
+                {{ form.full_name|add_class:"" }}
+                {{ form.full_name.errors }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.email.id_for_label }}">{% trans "Email" %}</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.phone.id_for_label }}">{% trans "Phone / WhatsApp" %}</label>
+                {{ form.phone }}
+                {{ form.phone.errors }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.country_of_residence.id_for_label }}">{% trans "Country of residence" %}</label>
+                {{ form.country_of_residence }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.preferred_destination.id_for_label }}">{% trans "Preferred destination" %}</label>
+                {{ form.preferred_destination }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.interested_service.id_for_label }}">{% trans "Interested in" %}</label>
+                {{ form.interested_service }}
+            </div>
+
+            <div class="form-field">
+                <label for="{{ form.message.id_for_label }}">{% trans "Message" %}</label>
+                {{ form.message }}
+                <span class="helptext">{% trans "Tell us your target intake, budget, or any questions." %}</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">{% trans "Request Free Consultation" %}</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

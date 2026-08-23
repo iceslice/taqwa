@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Upload Document" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head text-center" style="margin: 0 auto 32px;">
+            <span class="eyebrow">{% trans "Student Portal" %}</span>
+            <h1>{% trans "Upload a Document" %}</h1>
+            <p class="muted">{% trans "PDF, JPG, or PNG — up to 8MB." %}</p>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" class="form-card">
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="{{ form.document_type.id_for_label }}">{% trans "Document type" %}</label>
+                {{ form.document_type }}
+                {{ form.document_type.errors }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.file.id_for_label }}">{% trans "File" %}</label>
+                {{ form.file }}
+                {{ form.file.errors }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">{% trans "Upload" %}</button>
+            <p class="text-center muted" style="margin-top:16px;">
+                <a href="{% url 'portal:dashboard' %}">&larr; {% trans "Back to dashboard" %}</a>
+            </p>
+        </form>
+    </div>
+</section>
+{% endblock %}

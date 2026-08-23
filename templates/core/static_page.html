@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ page.title }} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container" style="max-width: 760px;">
+        <span class="eyebrow">{% trans "Taqwa Global Education" %}</span>
+        <h1>{{ page.title }}</h1>
+        <div class="stack">
+            {{ page.body|linebreaks }}
+        </div>
+    </div>
+</section>
+{% endblock %}

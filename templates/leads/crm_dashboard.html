@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n leads_extras %}
+
+{% block title %}{% trans "CRM Dashboard" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "Staff" %}</span>
+            <h1>{% trans "Lead Pipeline" %}</h1>
+        </div>
+
+        <div class="pipeline-strip">
+            <a href="{% url 'leads:crm_dashboard' %}" class="pipeline-chip {% if not request.GET.status %}is-active{% endif %}">
+                <span class="muted">{% trans "All" %}</span>
+                <strong>{{ leads|length }}</strong>
+            </a>
+            {% for code, label in status_choices %}
+                <a href="?status={{ code }}" class="pipeline-chip {% if request.GET.status == code %}is-active{% endif %}">
+                    <span class="muted">{{ label }}</span>
+                    <strong>{{ counts|get_item:code }}</strong>
+                </a>
+            {% endfor %}
+        </div>
+
+        <form method="get" class="cluster" style="margin-bottom:20px;">
+            <input type="text" name="q" placeholder="{% trans 'Search name, email, phone…' %}" value="{{ request.GET.q }}" style="padding:0.6em 0.9em; border:1px solid var(--line); border-radius:var(--radius-sm); flex:1; min-width:220px;">
+            <button type="submit" class="btn btn-outline btn-sm">{% trans "Search" %}</button>
+        </form>
+
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>{% trans "Name" %}</th>
+                        <th>{% trans "Contact" %}</th>
+                        <th>{% trans "Destination" %}</th>
+                        <th>{% trans "Status" %}</th>
+                        <th>{% trans "Assigned To" %}</th>
+                        <th>{% trans "Created" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for lead in leads %}
+                        <tr onclick="window.location='{% url 'leads:crm_detail' lead.pk %}'" style="cursor:pointer;">
+                            <td>{{ lead.full_name }}</td>
+                            <td>{{ lead.phone }}<br><span class="muted">{{ lead.email }}</span></td>
+                            <td>{{ lead.get_preferred_destination_display|default:"—" }}</td>
+                            <td><span class="badge">{{ lead.get_status_display }}</span></td>
+                            <td>{{ lead.assigned_to|default:"—" }}</td>
+                            <td class="muted">{{ lead.created_at|date:"d M Y" }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr><td colspan="6" class="muted">{% trans "No leads found." %}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

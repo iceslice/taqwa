@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Services" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "What We Do" %}</span>
+            <h1>{% trans "Study Abroad, Visa & Scholarship Services" %}</h1>
+            <p class="muted">{% trans "Pick a service to see how we help, step by step." %}</p>
+        </div>
+
+        <div class="card-grid">
+            {% for service in services %}
+                <a class="card" href="{% url 'services:detail' service.slug %}">
+                    <span class="icon-badge">{{ forloop.counter }}</span>
+                    <span class="badge badge-muted">{{ service.get_category_display }}</span>
+                    <h3 style="margin-top:12px;">{{ service.title }}</h3>
+                    <p class="muted">{{ service.summary }}</p>
+                </a>
+            {% empty %}
+                <p class="muted">{% trans "No services published yet." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

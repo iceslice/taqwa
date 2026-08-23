@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ service.title }} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container" style="max-width: 760px;">
+        <span class="eyebrow">{{ service.get_category_display }}</span>
+        <h1>{{ service.title }}</h1>
+        <p class="hero-lede">{{ service.summary }}</p>
+        <div class="route-line"></div>
+        <div class="stack">
+            {{ service.description|linebreaks }}
+        </div>
+        <a href="{% url 'leads:capture' %}" class="btn btn-primary" style="margin-top:24px;">
+            {% trans "Get a Free Consultation on This" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

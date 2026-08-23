@@ -1,0 +1,36 @@
+/* ============================================================
+   RTL companion — loaded in addition to main.css when
+   LANGUAGE_BIDI is true (Arabic, Urdu, Farsi). Flips the small
+   set of directional rules main.css can't express with logical
+   properties alone (dotted route-line direction, eyebrow rule,
+   timeline border).
+   ============================================================ */
+
+html[dir="rtl"] .eyebrow::before {
+  order: 2;
+}
+
+html[dir="rtl"] .route-line {
+  background-image: linear-gradient(to left, var(--line) 55%, transparent 0%);
+}
+html[dir="rtl"] .route-line::before { left: auto; right: -3px; background: var(--accent); }
+html[dir="rtl"] .route-line::after { right: auto; left: -3px; background: var(--primary); }
+
+html[dir="rtl"] .timeline li {
+  border-left: none;
+  border-right: 2px dotted var(--line);
+  padding: 0 26px 20px 0;
+}
+html[dir="rtl"] .timeline li:last-child { border-right-color: transparent; }
+html[dir="rtl"] .timeline li::before {
+  left: auto; right: -6px;
+}
+
+html[dir="rtl"] .boarding-card::after {
+  background-position: 6px 0;
+}
+
+html[dir="rtl"] table.data-table th,
+html[dir="rtl"] table.data-table td {
+  text-align: right;
+}

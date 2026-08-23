@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "University Directory" %} — {% trans "Taqwa Global Education" %}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">{% trans "Destinations" %}</span>
+            <h1>{% trans "University & Destination Directory" %}</h1>
+            <p class="muted">{% trans "Filter by country or budget to find the right fit." %}</p>
+        </div>
+
+        <form method="get" class="filter-bar">
+            <div class="form-field" style="margin-bottom:0;">
+                <label>{% trans "Country" %}</label>
+                {{ filter.form.country }}
+            </div>
+            <div class="form-field" style="margin-bottom:0;">
+                <label>{% trans "Max tuition (USD)" %}</label>
+                {{ filter.form.max_tuition }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">{% trans "Filter" %}</button>
+            <a href="{% url 'universities:directory' %}" class="btn btn-outline btn-sm">{% trans "Reset" %}</a>
+        </form>
+
+        <div class="card-grid">
+            {% for uni in filter.qs %}
+                <a class="card uni-card" href="{% url 'universities:detail' uni.slug %}">
+                    <div>
+                        <span class="uni-flag">{{ uni.country.flag_emoji }}</span>
+                        <h3>{{ uni.name }}</h3>
+                        <div class="uni-meta">
+                            <span>{{ uni.city }}, {{ uni.country.name }}</span>
+                            {% if uni.ranking %}<span>{% trans "Rank" %} #{{ uni.ranking }}</span>{% endif %}
+                            {% if uni.tuition_from_usd %}<span>{% trans "From" %} ${{ uni.tuition_from_usd }}</span>{% endif %}
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                <p class="muted">{% trans "No universities match these filters yet." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
