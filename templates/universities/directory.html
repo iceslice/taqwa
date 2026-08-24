@@ -27,10 +27,18 @@
 
         <div class="card-grid">
             {% for uni in filter.qs %}
-                <a class="card uni-card" href="{% url 'universities:detail' uni.slug %}">
+                <!-- <a class="card uni-card" href="{% url 'universities:detail' uni.slug %}">
                     <div>
                         <span class="uni-flag">{{ uni.country.flag_emoji }}</span>
-                        <h3>{{ uni.name }}</h3>
+                        <h3>{{ uni.name }}</h3> -->
+                    <a class="card uni-card" href="{% url 'universities:detail' uni.slug %}">
+    <div>
+        {% if uni.logo %}
+            <img src="{{ uni.logo.url }}" alt="{{ uni.name }}" style="height:40px; width:auto; margin-bottom:10px;">
+        {% else %}
+            <span class="uni-flag">{{ uni.country.flag_emoji }}</span>
+        {% endif %}
+        <h3>{{ uni.name }}</h3>
                         <div class="uni-meta">
                             <span>{{ uni.city }}, {{ uni.country.name }}</span>
                             {% if uni.ranking %}<span>{% trans "Rank" %} #{{ uni.ranking }}</span>{% endif %}

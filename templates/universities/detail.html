@@ -6,8 +6,14 @@
 {% block content %}
 <section class="section">
     <div class="container" style="max-width: 760px;">
-        <span class="eyebrow">{{ university.country.flag_emoji }} {{ university.country.name }}</span>
-        <h1>{{ university.name }}</h1>
+        <!-- <span class="eyebrow">{{ university.country.flag_emoji }} {{ university.country.name }}</span>
+        <h1>{{ university.name }}</h1> -->
+
+        {% if university.logo %}
+    <img src="{{ university.logo.url }}" alt="{{ university.name }}" style="height:60px; width:auto; margin-bottom:16px;">
+{% endif %}
+<span class="eyebrow">{{ university.country.flag_emoji }} {{ university.country.name }}</span>
+<h1>{{ university.name }}</h1>
 
         <div class="stat-row">
             <div class="boarding-card">
