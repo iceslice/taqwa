@@ -14,6 +14,11 @@ class SiteSettings(models.Model):
     students_served = models.PositiveIntegerField(default=0)
     visa_success_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
+    facebook_url = models.URLField(blank=True, help_text="Full URL, e.g. https://facebook.com/taqwaglobaleducation")
+    youtube_url = models.URLField(blank=True, help_text="Full URL to your channel")
+    instagram_url = models.URLField(blank=True, help_text="Full URL to your Instagram profile")
+    linkedin_url = models.URLField(blank=True, help_text="Full URL to your LinkedIn profile")
+
     def save(self, *args, **kwargs):
         self.pk = 1
         super().save(*args, **kwargs)
