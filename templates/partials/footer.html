@@ -1,4 +1,4 @@
-{% load i18n %}
+<!-- {% load i18n %}
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
@@ -21,6 +21,52 @@
         <div class="footer-bottom">
             <span>&copy; {% now "Y" %} {% trans "Taqwa Global Education. All rights reserved." %}</span>
             <span>{% trans "Powered by One Source Solutions" %}</span>
+        </div>
+    </div>
+</footer> -->
+
+
+{% load i18n %}
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>{% trans "Taqwa Global Education" %}</h4>
+                <h4 class="muted">{% trans "Study abroad guidance — visa, admission and scholarship support for students across Bangladesh and Malaysia." %}</h4>
+
+                {% if site.facebook_url or site.youtube_url or site.instagram_url or site.linkedin_url %}
+                <div class="cluster" style="margin-top:16px;">
+                    {% if site.facebook_url %}
+                        <a href="{{ site.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook" style="font-size:1.1rem;">Facebook</a>
+                    {% endif %}
+                    {% if site.youtube_url %}
+                        <a href="{{ site.youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube" style="font-size:1.1rem;">YouTube</a>
+                    {% endif %}
+                    {% if site.instagram_url %}
+                        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram" style="font-size:1.1rem;">Instagram</a>
+                    {% endif %}
+                    {% if site.linkedin_url %}
+                        <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn" style="font-size:1.1rem;">LinkedIn</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                <h4>{% trans "Explore" %}</h4>
+                <p><a href="{% url 'services:list' %}">{% trans "Services" %}</a></p>
+                <p><a href="{% url 'universities:directory' %}">{% trans "Universities" %}</a></p>
+                <p><a href="{% url 'leads:capture' %}">{% trans "Free Consultation" %}</a></p>
+            </div>
+            <div>
+                <h4>{% trans "Contact" %}</h4>
+                <h4>{{ site.phone|default:"+880 1343 830371" }}</h4>
+                <h4>{{ site.email|default:"edu.taqwa@gmail.com" }}</h4>
+                {% if site.address %}<h4>{{ site.address|linebreaksbr }}</h4>{% endif %}
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; {% now "Y" %} {% trans "Taqwa Global Education. All rights reserved." %}</span>
+            <span>{% trans "Powered by" %} <a href="https://oss.taqwaglobaleducation.com/" target="_blank" rel="noopener">{% trans "One Source Solutions" %}</a></span>
         </div>
     </div>
 </footer>
