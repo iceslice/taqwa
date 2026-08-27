@@ -271,6 +271,8 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="no-reply@taqwaglobaleducation.com")
 LEAD_NOTIFICATION_EMAIL = env("LEAD_NOTIFICATION_EMAIL", default=EMAIL_HOST_USER)
 
+SITE_URL = env("SITE_URL", default="http://127.0.0.1:8000")
+
 WHATSAPP_NUMBER = env("WHATSAPP_NUMBER", default="")
 
 # ---------- File upload limits (student docs) ----------
