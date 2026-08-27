@@ -110,6 +110,20 @@ def dashboard(request):
 #         form = DocumentUploadForm()
 #     return render(request, "portal/upload.html", {"form": form})
 
+
+def _notify_staff_new_document(doc):
+    if settings.EMAIL_HOST_USER:
+        send_mail(
+            subject=f"Document uploaded: {doc.document_type.name} — {doc.student.user.get_full_name() or doc.student.user.username}",
+            message=f"A new document was uploaded and needs review.\n\n"
+                    f"Student: {doc.student.user.get_full_name() or doc.student.user.username}\n"
+                    f"Document type: {doc.document_type.name}\n"
+                    f"Review it in the admin: {settings.SITE_URL}/admin/portal/studentdocument/{doc.pk}/change/",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.LEAD_NOTIFICATION_EMAIL],
+            fail_silently=True,
+        )
+
 @login_required
 def upload_document(request):
     profile, _ = StudentProfile.objects.get_or_create(user=request.user)
@@ -127,18 +141,7 @@ def upload_document(request):
     return render(request, "portal/upload.html", {"form": form})
 
 
-def _notify_staff_new_document(doc):
-    if settings.EMAIL_HOST_USER:
-        send_mail(
-            subject=f"Document uploaded: {doc.document_type.name} — {doc.student.user.get_full_name() or doc.student.user.username}",
-            message=f"A new document was uploaded and needs review.\n\n"
-                    f"Student: {doc.student.user.get_full_name() or doc.student.user.username}\n"
-                    f"Document type: {doc.document_type.name}\n"
-                    f"Review it in the admin: {settings.SITE_URL}/admin/portal/studentdocument/{doc.pk}/change/",
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.LEAD_NOTIFICATION_EMAIL],
-            fail_silently=True,
-        )
+
 
 
 @login_required
