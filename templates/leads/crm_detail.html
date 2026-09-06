@@ -22,12 +22,23 @@
                     <p class="muted">{{ lead.country_of_residence|default:"—" }}</p>
                 </div>
 
-                <div class="card">
+                <!-- <div class="card">
                     <h3>{% trans "Interest" %}</h3>
                     <p><strong>{% trans "Destination:" %}</strong> {{ lead.get_preferred_destination_display|default:"—" }}</p>
                     <p><strong>{% trans "Service:" %}</strong> {{ lead.interested_service|default:"—" }}</p>
                     <p class="muted">{{ lead.message|default:"—"|linebreaksbr }}</p>
-                </div>
+                </div> -->
+
+                <div class="card">
+    <h3>{% trans "Interest" %}</h3>
+    <p><strong>{% trans "Programme:" %}</strong> {{ lead.programme|default:"—" }}</p>
+    <p><strong>{% trans "University:" %}</strong> {{ lead.university|default:"—" }}</p>
+    <p><strong>{% trans "Subject:" %}</strong> {{ lead.subject|default:"—" }}</p>
+    <p><strong>{% trans "Destination:" %}</strong> {{ lead.get_preferred_destination_display|default:"—" }}</p>
+    <p><strong>{% trans "Service:" %}</strong> {{ lead.interested_service|default:"—" }}</p>
+    <p><strong>{% trans "Future plan:" %}</strong> {{ lead.future_plan|default:"—"|linebreaksbr }}</p>
+    <p class="muted">{{ lead.message|default:"—"|linebreaksbr }}</p>
+</div>
 
                 <div class="card">
                     <h3>{% trans "Update Status" %}</h3>

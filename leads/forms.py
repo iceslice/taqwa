@@ -1,16 +1,29 @@
 from django import forms
 from .models import Lead, LeadNote
 
+# class LeadCaptureForm(forms.ModelForm):
+#     """Public-facing form — used on Contact / Free Consultation pages."""
+#     class Meta:
+#         model = Lead
+#         fields = [
+#             "full_name", "email", "phone", "country_of_residence",
+#             "preferred_destination", "interested_service", "message",
+#         ]
+#         widgets = {
+#             "message": forms.Textarea(attrs={"rows": 4}),
+#         }
+
 class LeadCaptureForm(forms.ModelForm):
-    """Public-facing form — used on Contact / Free Consultation pages."""
     class Meta:
         model = Lead
         fields = [
-            "full_name", "email", "phone", "country_of_residence",
-            "preferred_destination", "interested_service", "message",
+            "full_name", "email", "phone", "programme", "university",
+            "subject", "future_plan", "preferred_destination",
+            "interested_service", "message",
         ]
         widgets = {
             "message": forms.Textarea(attrs={"rows": 4}),
+            "future_plan": forms.Textarea(attrs={"rows": 3}),
         }
 
 class LeadStatusForm(forms.ModelForm):
