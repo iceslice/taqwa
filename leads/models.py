@@ -35,7 +35,12 @@ class Lead(models.Model):
     full_name = models.CharField(max_length=150)
     email = models.EmailField()
     phone = models.CharField(max_length=30)
-    country_of_residence = models.CharField(max_length=100, blank=True)
+    # country_of_residence = models.CharField(max_length=100, blank=True)
+    programme = models.CharField(max_length=150, blank=True, help_text="e.g. Bachelor's, Master's, Foundation")
+    university = models.CharField(max_length=200, blank=True)
+    subject = models.CharField(max_length=150, blank=True)
+    future_plan = models.TextField(blank=True, help_text="What the student hopes to do after this programme")
+
     preferred_destination = models.CharField(max_length=20, choices=DESTINATION_CHOICES, blank=True)
     interested_service = models.CharField(max_length=100, blank=True)
     message = models.TextField(blank=True)
