@@ -38,13 +38,29 @@ def capture_lead(request):
 #             fail_silently=True,
 #         )
 
+# def _notify_staff_new_lead(lead):
+#     if settings.EMAIL_HOST_USER:
+#         send_mail(
+#             subject=f"New lead: {lead.full_name}",
+#             message=f"New consultation request from {lead.full_name} ({lead.phone}, {lead.email}).\n\n"
+#                     f"Destination: {lead.get_preferred_destination_display() or '—'}\n"
+#                     f"Service interest: {lead.interested_service or '—'}\n\n"
+#                     f"Message:\n{lead.message or '—'}",
+#             from_email=settings.DEFAULT_FROM_EMAIL,
+#             recipient_list=[settings.LEAD_NOTIFICATION_EMAIL],
+#             fail_silently=True,
+#         )
+
 def _notify_staff_new_lead(lead):
     if settings.EMAIL_HOST_USER:
         send_mail(
             subject=f"New lead: {lead.full_name}",
             message=f"New consultation request from {lead.full_name} ({lead.phone}, {lead.email}).\n\n"
-                    f"Destination: {lead.get_preferred_destination_display() or '—'}\n"
-                    f"Service interest: {lead.interested_service or '—'}\n\n"
+                    f"Programme: {lead.programme or '—'}\n"
+                    f"University: {lead.university or '—'}\n"
+                    f"Subject: {lead.subject or '—'}\n"
+                    f"Destination: {lead.get_preferred_destination_display() or '—'}\n\n"
+                    f"Future plan:\n{lead.future_plan or '—'}\n\n"
                     f"Message:\n{lead.message or '—'}",
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[settings.LEAD_NOTIFICATION_EMAIL],

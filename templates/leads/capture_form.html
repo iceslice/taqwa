@@ -33,10 +33,26 @@
                 {{ form.phone.errors }}
             </div>
 
-            <div class="form-field">
+            <!-- <div class="form-field">
                 <label for="{{ form.country_of_residence.id_for_label }}">{% trans "Country of residence" %}</label>
                 {{ form.country_of_residence }}
-            </div>
+            </div> -->
+
+            <div class="form-field">
+    <label for="{{ form.programme.id_for_label }}">{% trans "Programme" %}</label>
+    {{ form.programme }}
+    <span class="helptext">{% trans "e.g. Bachelor's, Master's, Foundation" %}</span>
+</div>
+
+<div class="form-field">
+    <label for="{{ form.university.id_for_label }}">{% trans "University" %}</label>
+    {{ form.university }}
+</div>
+
+<div class="form-field">
+    <label for="{{ form.subject.id_for_label }}">{% trans "Subject" %}</label>
+    {{ form.subject }}
+</div>
 
             <div class="form-field">
                 <label for="{{ form.preferred_destination.id_for_label }}">{% trans "Preferred destination" %}</label>
@@ -47,6 +63,12 @@
                 <label for="{{ form.interested_service.id_for_label }}">{% trans "Interested in" %}</label>
                 {{ form.interested_service }}
             </div>
+
+            <div class="form-field">
+    <label for="{{ form.future_plan.id_for_label }}">{% trans "Future plan" %}</label>
+    {{ form.future_plan }}
+    <span class="helptext">{% trans "What do you hope to do after completing this programme?" %}</span>
+</div>
 
             <div class="form-field">
                 <label for="{{ form.message.id_for_label }}">{% trans "Message" %}</label>
