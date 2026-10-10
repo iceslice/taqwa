@@ -19,6 +19,7 @@ class SiteSettings(models.Model):
     instagram_url = models.URLField(blank=True, help_text="Full URL to your Instagram profile")
     linkedin_url = models.URLField(blank=True, help_text="Full URL to your LinkedIn profile")
     x_url = models.URLField(blank=True, help_text="Full URL to your X (Twitter) profile")
+    tiktok_url = models.URLField(blank=True, help_text="Full URL to your TikTok profile")
 
     def save(self, *args, **kwargs):
         self.pk = 1
