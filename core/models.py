@@ -18,6 +18,7 @@ class SiteSettings(models.Model):
     youtube_url = models.URLField(blank=True, help_text="Full URL to your channel")
     instagram_url = models.URLField(blank=True, help_text="Full URL to your Instagram profile")
     linkedin_url = models.URLField(blank=True, help_text="Full URL to your LinkedIn profile")
+    x_url = models.URLField(blank=True, help_text="Full URL to your X (Twitter) profile")
 
     def save(self, *args, **kwargs):
         self.pk = 1
