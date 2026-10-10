@@ -34,7 +34,7 @@
                 <h4>{% trans "Taqwa Global Education" %}</h4>
                 <h4 class="muted">{% trans "Study abroad guidance — visa, admission and scholarship support for students across Bangladesh and Malaysia." %}</h4>
 
-                {% if site.facebook_url or site.youtube_url or site.instagram_url or site.linkedin_url %}
+                {% if site.facebook_url or site.youtube_url or site.instagram_url or site.linkedin_url or site.x_url %}
                 <div class="cluster" style="margin-top:16px;">
                     {% if site.facebook_url %}
                         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook" style="font-size:1.1rem;">Facebook</a>
@@ -47,6 +47,9 @@
                     {% endif %}
                     {% if site.linkedin_url %}
                         <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn" style="font-size:1.1rem;">LinkedIn</a>
+                    {% endif %}
+                    {% if site.x_url %}
+                        <a href="{{ site.x_url }}" target="_blank" rel="noopener" aria-label="X (Twitter)" style="font-size:1.1rem;">X (Twitter)</a>
                     {% endif %}
                 </div>
                 {% endif %}
