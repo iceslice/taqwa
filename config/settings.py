@@ -234,6 +234,7 @@ LANGUAGES = [
     ("ru", "Русский"),
     ("zh-hans", "中文 (Chinese)"),
     ("es", "Español"),
+    ("tr", "Türkçe"),
 ]
 # RTL languages — used in templates/context processor to flip <html dir="">
 LANGUAGES_BIDI = ["ar", "ur", "fa"]
@@ -287,4 +288,4 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en"    # added later
-MODELTRANSLATION_LANGUAGES = ("en", "bn", "ar", "ur", "fa", "ms", "fr", "ru", "zh-hans", "es")    # added later
+MODELTRANSLATION_LANGUAGES = ("en", "bn", "ar", "ur", "fa", "ms", "fr", "ru", "zh-hans", "es", "tr")    # added later
