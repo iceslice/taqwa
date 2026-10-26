@@ -1,0 +1,612 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 10:28+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\templates\base.html:8 .\templates\core\static_page.html:4
+#: .\templates\core\static_page.html:9 .\templates\leads\capture_form.html:4
+#: .\templates\leads\crm_dashboard.html:4 .\templates\leads\crm_detail.html:4
+#: .\templates\partials\footer.html:6 .\templates\partials\footer.html:34
+#: .\templates\partials\nav.html:6 .\templates\portal\dashboard.html:4
+#: .\templates\portal\login.html:4 .\templates\portal\signup.html:4
+#: .\templates\portal\upload.html:4 .\templates\services\detail.html:4
+#: .\templates\services\list.html:4 .\templates\universities\detail.html:4
+#: .\templates\universities\directory.html:4
+msgid "Taqwa Global Education"
+msgstr ""
+
+#: .\templates\base.html:10
+msgid "Study abroad guidance — visa, admission and scholarship support."
+msgstr ""
+
+#: .\templates\base.html:59
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: .\templates\core\home.html:4
+msgid "Taqwa Global Education — Study Abroad Made Simple"
+msgstr ""
+
+#: .\templates\core\home.html:11
+msgid "Study Abroad Consultancy"
+msgstr ""
+
+#: .\templates\core\home.html:12
+msgid "Study in Malaysia at Top ranking Universities"
+msgstr ""
+
+#: .\templates\core\home.html:13
+msgid ""
+"Visa, admission and scholarship support — from the first consultation to the "
+"day you board your flight."
+msgstr ""
+
+#: .\templates\core\home.html:15 .\templates\core\home.html:117
+#: .\templates\leads\capture_form.html:4 .\templates\leads\capture_form.html:10
+#: .\templates\partials\footer.html:13 .\templates\partials\footer.html:64
+#: .\templates\partials\nav.html:35
+msgid "Free Consultation"
+msgstr ""
+
+#: .\templates\core\home.html:16
+msgid "Browse Universities"
+msgstr ""
+
+#: .\templates\core\home.html:21
+msgid "Boarding Pass"
+msgstr ""
+
+#: .\templates\core\home.html:21
+msgid "Route to Your Future"
+msgstr ""
+
+#: .\templates\core\home.html:25 .\templates\universities\directory.html:45
+msgid "From"
+msgstr ""
+
+#: .\templates\core\home.html:26
+msgid "You"
+msgstr ""
+
+#: .\templates\core\home.html:29
+msgid "To"
+msgstr ""
+
+#: .\templates\core\home.html:30
+msgid "Offer Letter"
+msgstr ""
+
+#: .\templates\core\home.html:42
+msgid "Students Served"
+msgstr ""
+
+#: .\templates\core\home.html:46
+msgid "Visa Success Rate"
+msgstr ""
+
+#: .\templates\core\home.html:50
+msgid "Partner Universities"
+msgstr ""
+
+#: .\templates\core\home.html:51
+msgid "Top Ranked"
+msgstr ""
+
+#: .\templates\core\home.html:60 .\templates\services\list.html:10
+msgid "What We Do"
+msgstr ""
+
+#: .\templates\core\home.html:61
+msgid "Our Services"
+msgstr ""
+
+#: .\templates\core\home.html:62
+msgid ""
+"Everything you need between deciding to study in Malaysia and landing at "
+"your destination."
+msgstr ""
+
+#: .\templates\core\home.html:73
+msgid "Services will appear here once added in the admin."
+msgstr ""
+
+#: .\templates\core\home.html:82
+msgid "Where You Could Go"
+msgstr ""
+
+#: .\templates\core\home.html:83
+msgid "Featured Universities"
+msgstr ""
+
+#: .\templates\core\home.html:102 .\templates\universities\directory.html:44
+msgid "Rank"
+msgstr ""
+
+#: .\templates\core\home.html:107
+msgid "Universities will appear here once added in the admin."
+msgstr ""
+
+#: .\templates\core\home.html:115
+msgid "Ready to start your journey?"
+msgstr ""
+
+#: .\templates\core\home.html:116
+msgid "Book a free consultation with our counselors today."
+msgstr ""
+
+#: .\templates\leads\capture_form.html:11
+msgid "Tell us about your study abroad plans"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:12
+msgid "Our counselors respond within 24 hours."
+msgstr "Teşekkürler! Ekibimiz 24 saat içinde sizinle iletişime geçecek."
+
+#: .\templates\leads\capture_form.html:19
+msgid "Full name"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:25
+msgid "Email"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:31
+msgid "Phone / WhatsApp"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:37
+msgid "Country of residence"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:42
+msgid "Programme"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:44
+msgid "e.g. Bachelor's, Master's, Foundation"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:48
+msgid "University"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:53
+msgid "Subject"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:58
+msgid "Preferred destination"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:63
+msgid "Interested in"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:68
+msgid "Future plan"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:70
+msgid "What do you hope to do after completing this programme?"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:74
+msgid "Message"
+msgstr ""
+
+#: .\templates\leads\capture_form.html:76
+msgid "Tell us your target intake, budget, or any questions."
+msgstr ""
+
+#: .\templates\leads\capture_form.html:79
+msgid "Request Free Consultation"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:4
+msgid "CRM Dashboard"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:10
+msgid "Staff"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:11
+msgid "Lead Pipeline"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:16
+msgid "All"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:28
+msgid "Search name, email, phone…"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:29
+msgid "Search"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:36
+msgid "Name"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:37 .\templates\leads\crm_detail.html:20
+#: .\templates\partials\footer.html:16 .\templates\partials\footer.html:67
+msgid "Contact"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:38
+msgid "Destination"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:39 .\templates\leads\crm_detail.html:48
+msgid "Status"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:40
+msgid "Assigned To"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:41
+msgid "Created"
+msgstr ""
+
+#: .\templates\leads\crm_dashboard.html:55
+msgid "No leads found."
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:4
+msgid "Lead"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:9
+msgid "Back to pipeline"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:26 .\templates\leads\crm_detail.html:33
+msgid "Interest"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:27 .\templates\leads\crm_detail.html:37
+msgid "Destination:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:28 .\templates\leads\crm_detail.html:38
+msgid "Service:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:34
+msgid "Programme:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:35
+msgid "University:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:36
+msgid "Subject:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:39
+msgid "Future plan:"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:44
+msgid "Update Status"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:52
+msgid "Assigned to"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:55
+msgid "Save"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:62
+msgid "Add Note"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:68
+msgid "Log Note"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:73
+msgid "Timeline"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:81
+msgid "No notes logged yet."
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:88
+msgid "Consultations"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:92
+msgid "Completed"
+msgstr ""
+
+#: .\templates\leads\crm_detail.html:92
+msgid "Scheduled"
+msgstr ""
+
+#: .\templates\partials\footer.html:7 .\templates\partials\footer.html:35
+msgid ""
+"Study abroad guidance — visa, admission and scholarship support for students "
+"across Bangladesh and Malaysia."
+msgstr ""
+
+#: .\templates\partials\footer.html:10 .\templates\partials\footer.html:61
+msgid "Explore"
+msgstr ""
+
+#: .\templates\partials\footer.html:11 .\templates\partials\footer.html:62
+#: .\templates\partials\nav.html:11 .\templates\services\list.html:4
+msgid "Services"
+msgstr ""
+
+#: .\templates\partials\footer.html:12 .\templates\partials\footer.html:63
+#: .\templates\partials\nav.html:12
+msgid "Universities"
+msgstr ""
+
+#: .\templates\partials\footer.html:22 .\templates\partials\footer.html:74
+msgid "Taqwa Global Education. All rights reserved."
+msgstr ""
+
+#: .\templates\partials\footer.html:23
+msgid "Powered by One Source Solutions"
+msgstr ""
+
+#: .\templates\partials\footer.html:75
+msgid "Powered by"
+msgstr ""
+
+#: .\templates\partials\footer.html:75
+msgid "One Source Solutions"
+msgstr ""
+
+#: .\templates\partials\language_switcher.html:7
+msgid "Choose language"
+msgstr ""
+
+#: .\templates\partials\nav.html:10
+msgid "Home"
+msgstr ""
+
+#: .\templates\partials\nav.html:13
+msgid "About"
+msgstr ""
+
+#: .\templates\partials\nav.html:15
+msgid "My Portal"
+msgstr ""
+
+#: .\templates\partials\nav.html:22 .\templates\partials\nav.html:31
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\partials\nav.html:25
+msgid "Log Out"
+msgstr ""
+
+#: .\templates\partials\nav.html:28 .\templates\partials\nav.html:33
+#: .\templates\portal\login.html:4
+msgid "Student Login"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:4
+msgid "My Dashboard"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:10 .\templates\portal\login.html:10
+#: .\templates\portal\signup.html:10 .\templates\portal\upload.html:10
+msgid "Student Portal"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:11
+msgid "Welcome"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:19
+msgid "Profile"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:20
+msgid "Target country:"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:21
+msgid "Nationality:"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:22
+msgid "Phone:"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:23 .\templates\portal\upload.html:11
+msgid "Upload a Document"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:27
+msgid "Document Checklist"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:37
+msgid "Approved"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:39
+msgid "Needs Re-upload"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:41
+msgid "Pending Review"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:44
+msgid "Missing"
+msgstr ""
+
+#: .\templates\portal\dashboard.html:48
+msgid "No document checklist has been configured yet."
+msgstr ""
+
+#: .\templates\portal\login.html:11
+msgid "Welcome back"
+msgstr ""
+
+#: .\templates\portal\login.html:12
+msgid "Log in to track your application and upload documents."
+msgstr ""
+
+#: .\templates\portal\login.html:18
+msgid "Incorrect username or password."
+msgstr ""
+
+#: .\templates\portal\login.html:21
+msgid "Username"
+msgstr ""
+
+#: .\templates\portal\login.html:25
+msgid "Password"
+msgstr ""
+
+#: .\templates\portal\login.html:28
+msgid "Log In"
+msgstr ""
+
+#: .\templates\portal\login.html:30
+msgid "New here?"
+msgstr ""
+
+#: .\templates\portal\login.html:30
+msgid "Create an account"
+msgstr ""
+
+#: .\templates\portal\signup.html:4 .\templates\portal\signup.html:25
+msgid "Create Account"
+msgstr ""
+
+#: .\templates\portal\signup.html:11
+msgid "Create your account"
+msgstr ""
+
+#: .\templates\portal\signup.html:12
+msgid "Track your application status and upload documents in one place."
+msgstr ""
+
+#: .\templates\portal\signup.html:27
+msgid "Already have an account?"
+msgstr ""
+
+#: .\templates\portal\signup.html:27
+msgid "Log in"
+msgstr ""
+
+#: .\templates\portal\upload.html:4
+msgid "Upload Document"
+msgstr ""
+
+#: .\templates\portal\upload.html:12
+msgid "PDF, JPG, or PNG — up to 8MB."
+msgstr ""
+
+#: .\templates\portal\upload.html:18
+msgid "Document type"
+msgstr ""
+
+#: .\templates\portal\upload.html:23
+msgid "File"
+msgstr ""
+
+#: .\templates\portal\upload.html:27
+msgid "Upload"
+msgstr ""
+
+#: .\templates\portal\upload.html:29
+msgid "Back to dashboard"
+msgstr ""
+
+#: .\templates\services\detail.html:17
+msgid "Get a Free Consultation on This"
+msgstr ""
+
+#: .\templates\services\list.html:11
+msgid "Study Abroad, Visa & Scholarship Services"
+msgstr ""
+
+#: .\templates\services\list.html:12
+msgid "Pick a service to see how we help, step by step."
+msgstr ""
+
+#: .\templates\services\list.html:24
+msgid "No services published yet."
+msgstr ""
+
+#: .\templates\universities\detail.html:20
+msgid "City"
+msgstr ""
+
+#: .\templates\universities\detail.html:24
+msgid "Ranking"
+msgstr ""
+
+#: .\templates\universities\detail.html:28
+msgid "Tuition From"
+msgstr ""
+
+#: .\templates\universities\detail.html:40
+msgid "Get Help Applying Here"
+msgstr ""
+
+#: .\templates\universities\directory.html:4
+msgid "University Directory"
+msgstr ""
+
+#: .\templates\universities\directory.html:10
+msgid "Destinations"
+msgstr ""
+
+#: .\templates\universities\directory.html:11
+msgid "University & Destination Directory"
+msgstr ""
+
+#: .\templates\universities\directory.html:12
+msgid "Filter by country or budget to find the right fit."
+msgstr ""
+
+#: .\templates\universities\directory.html:17
+msgid "Country"
+msgstr ""
+
+#: .\templates\universities\directory.html:21
+msgid "Max tuition (USD)"
+msgstr ""
+
+#: .\templates\universities\directory.html:24
+msgid "Filter"
+msgstr ""
+
+#: .\templates\universities\directory.html:25
+msgid "Reset"
+msgstr ""
+
+#: .\templates\universities\directory.html:50
+msgid "No universities match these filters yet."
+msgstr ""
