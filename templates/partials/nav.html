@@ -11,6 +11,7 @@
             <li><a href="{% url 'services:list' %}">{% trans "Services" %}</a></li>
             <li><a href="{% url 'universities:directory' %}">{% trans "Universities" %}</a></li>
             <li><a href="{% url 'core:static_page' 'about' %}">{% trans "About" %}</a></li>
+            <li><a href="{% url 'core:contact' %}">{% trans "Contact" %}</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'portal:dashboard' %}">{% trans "My Portal" %}</a></li>
             {% endif %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n crispy_forms_tags %}
+
+{% block content %}
+<div class="container py-5">
+  <h1 class="mb-4">{% trans "Contact Us" %}</h1>
+
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <h2 class="h5">{% trans "Address" %}</h2>
+      <p>{{ site.address|linebreaksbr }}</p>
+
+      {% if site.office_hours %}
+        <h2 class="h5">{% trans "Office hours" %}</h2>
+        <p>{{ site.office_hours }}</p>
+      {% endif %}
+
+      <h2 class="h5">{% trans "Phone" %}</h2>
+      <p><a href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
+
+      <h2 class="h5">{% trans "Email" %}</h2>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+      <a class="btn btn-success me-2" href="https://wa.me/{{ site.whatsapp_number }}" target="_blank" rel="noopener">
+        {% trans "Chat on WhatsApp" %}
+      </a>
+      {% if site.map_link %}
+        <a class="btn btn-outline-primary" href="{{ site.map_link }}" target="_blank" rel="noopener">
+          {% trans "Get directions" %}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="col-lg-7">
+      <h2 class="h5">{% trans "Send us a message" %}</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">{% trans "Send message" %}</button>
+      </form>
+    </div>
+  </div>
+
+  {% if site.map_embed_url %}
+    <h2 class="h5 mt-5">{% trans "Find us on the map" %}</h2>
+    <div class="ratio ratio-16x9">
+      <iframe src="{{ site.map_embed_url }}" title="{% trans 'Our office on the map' %}"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

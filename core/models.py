@@ -14,6 +14,12 @@ class SiteSettings(models.Model):
     students_served = models.PositiveIntegerField(default=0)
     visa_success_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
+    office_hours = models.CharField(max_length=200, blank=True)
+    map_embed_url = models.URLField(max_length=2000, blank=True,
+    help_text="The src URL from Google Maps → Share → Embed a map")
+    map_link = models.URLField(max_length=500, blank=True,
+    help_text="Google Maps 'Share' link for the Get Directions button")
+
     facebook_url = models.URLField(blank=True, help_text="Full URL, e.g. https://facebook.com/taqwaglobaleducation")
     youtube_url = models.URLField(blank=True, help_text="Full URL to your channel")
     instagram_url = models.URLField(blank=True, help_text="Full URL to your Instagram profile")
