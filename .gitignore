@@ -28,3 +28,11 @@ Thumbs.db
 
 # Translations compiled files (keep .po, ignore compiled .mo if you prefer — many teams commit both; up to you)
 # locale/**/*.mo
+
+*.dump
+*.sql
+# Database dumps
+*.dump
+*.sql
+*.sqlite3
+.env
